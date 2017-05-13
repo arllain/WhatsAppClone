@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "913162521469",
+    "firebase_url": "https://projetos-31a87.firebaseio.com",
+    "project_id": "projetos-31a87",
+    "storage_bucket": "projetos-31a87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913162521469:android:a9c70d5974133c2b",
+        "android_client_info": {
+          "package_name": "com.candido.arllain.whatsappclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913162521469-te13sk9tta84m8djtpasi0e1t09knrto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.candido.arllain.whatsappclone",
+            "certificate_hash": "de067c1fad5b54fa7bee706051e4c7829a4eabe8"
+          }
+        },
+        {
+          "client_id": "913162521469-7p16bnidcrq807od4ueer5rmphonbi5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu_uOaElPeilEwIqGSFUu91H8NAvc2U70"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913162521469-7p16bnidcrq807od4ueer5rmphonbi5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

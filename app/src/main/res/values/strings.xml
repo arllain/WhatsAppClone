@@ -6,4 +6,6 @@
     <string name="ddd">11</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="telefonehint">999999999</string>
+    <string name="msg_validacao">Você recebeu um SMS para validação do seu número, digite o código de validação abaixo:</string>
+    <string name="validar">Validar</string>
 </resources>

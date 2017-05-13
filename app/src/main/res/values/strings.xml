@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WhatsAppClone</string>
+    <string name="digiteseunomehint">Digite seu nome</string>
+    <string name="logo">logo</string>
+    <string name="codPais">+55</string>
+    <string name="ddd">11</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="telefonehint">999999999</string>
 </resources>

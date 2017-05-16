@@ -13,6 +13,7 @@ import com.github.rtoshiro.util.format.MaskFormatter;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class LoginActivity extends AppCompatActivity {
@@ -38,11 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         SimpleMaskFormatter smfCodArea = new SimpleMaskFormatter("NN");
         SimpleMaskFormatter smfTelefone = new SimpleMaskFormatter("NNNNN-NNNN");
 
-        MaskTextWatcher maskCodPais = new MaskTextWatcher(telefone, smfCodPais);
-        telefone.addTextChangedListener(maskCodPais);
+        MaskTextWatcher maskCodPais = new MaskTextWatcher(codPais, smfCodPais);
+        codPais.addTextChangedListener(maskCodPais);
 
-        MaskTextWatcher maskCodArea = new MaskTextWatcher(telefone, smfCodArea);
-        telefone.addTextChangedListener(maskCodArea);
+        MaskTextWatcher maskCodArea = new MaskTextWatcher(codArea, smfCodArea);
+        codArea.addTextChangedListener(maskCodArea);
 
         MaskTextWatcher maskTel = new MaskTextWatcher(telefone, smfTelefone);
         telefone.addTextChangedListener(maskTel);
@@ -59,9 +60,11 @@ public class LoginActivity extends AppCompatActivity {
                 String token = String.valueOf(numeroRandomico);
 
                 Preferencia preferencia = new Preferencia(LoginActivity.this);
+                preferencia.salvarUsuarioPreferencias(nome.getText().toString(),telefoneSemFormatacao, token);
 
+                HashMap<String,String> usuario = preferencia.getDadosUsuario();
 
-
+                Log.i("Token", "t: " + usuario.get("token"));
             }
         });
     }

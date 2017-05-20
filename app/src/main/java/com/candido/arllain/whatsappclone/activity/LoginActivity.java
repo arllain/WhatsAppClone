@@ -2,6 +2,7 @@ package com.candido.arllain.whatsappclone.activity;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.candido.arllain.whatsappclone.R;
 import com.candido.arllain.whatsappclone.helper.Permissoes;
@@ -77,7 +79,17 @@ public class LoginActivity extends AppCompatActivity {
                 preferencia.salvarUsuarioPreferencias(nome.getText().toString(), telefoneSemFormatacao, token);
 
                 telefoneSemFormatacao = "5554";
-                boolean enviado = enviaSMS("+" + telefoneSemFormatacao, "Código de confirmação: " + token);
+                boolean enviadoSMS = enviaSMS("+" + telefoneSemFormatacao, "Código de confirmação: " + token);
+
+                if(enviadoSMS){
+                    Intent intent = new Intent(LoginActivity.this, ValidadorActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Problema ao enviar SMS. Tente mais uma vez.", Toast.LENGTH_LONG).show();
+
+                }
+
 
 //                HashMap<String, String> usuario = preferencia.getDadosUsuario();
 //                Log.i("Token", "t: " + usuario.get("token"));
@@ -118,7 +130,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int wich){
                 finish();
             }
-
         });
 
         AlertDialog alertDialog = builder.create();
